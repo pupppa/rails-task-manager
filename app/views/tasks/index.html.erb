@@ -1,11 +1,21 @@
-<h5>Todas as tarefas<h5>
+<br>
+<h4>TO DO LIST<h4>
 
-
-<% @tasks.each do |task| %>
-  <h5>Tarefa: <%= task.name %></h5>
-  <p>Prioridade: <%= task.priority %></p>
-<% end %>
 <br>
 <% @tasks.each do |task| %>
-  <%= link_to task.name, task_path(task) %>
+  <h5>• <%= task.name %></h5>
+  <p>• Prioridade: <%= task.priority %></p>
+
+  <%= link_to "Apagar", task_path(task), method: :delete %> | <%= link_to "Editar", edit_task_path(task) %>
+  <hr>
 <% end %>
+<h5><%= link_to "Crie uma nova tarefa!", new_task_path %></h5>
+<hr>
+
+<p> Lista de tarefas:</p>
+<% @tasks.each do |task| %>
+  • <%= link_to task.name, task_path(task) %>
+  <br>
+<% end %>
+<br>
+

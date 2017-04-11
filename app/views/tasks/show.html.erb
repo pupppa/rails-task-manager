@@ -1,5 +1,10 @@
-<h5>Todas as tarefas<h5>
+<br>
+<br>
+<h4>Sua tarefa foi adicionada com sucesso.<h4>
 
-
-<h5>Tarefa: <%= @task.name %></h5>
+<hr>
+<h5><%= @task.name %></h5>
 <p>Prioridade: <%= @task.priority %></p>
+<hr>
+<h5><%= link_to "Crie uma nova tarefa!", new_task_path %></h5>
+<h5><%= link_to "Ver todas as tarefas!", tasks_path %></h5>
